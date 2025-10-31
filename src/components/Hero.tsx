@@ -47,26 +47,40 @@ const Hero = () => {
           </div>
 
           {/* Trust Bar */}
-          <div className="pt-16 space-y-4">
-            <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-muted-foreground">
-              <span className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Trusted by Barbie
-              </span>
-              <span className="hidden sm:inline">•</span>
-              <span className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Woolworths
-              </span>
-              <span className="hidden sm:inline">•</span>
-              <span className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Amazon
-              </span>
+          <div className="pt-20">
+            <div className="glass-card mx-auto max-w-6xl px-8 py-10 rounded-2xl border-2 border-primary/20">
+              <div className="flex flex-col gap-8">
+                {/* Trusted By Brands */}
+                <div className="text-center">
+                  <p className="text-lg md:text-xl text-muted-foreground mb-6 uppercase tracking-wider">Trusted By</p>
+                  <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                    <span className="flex items-center gap-3 text-2xl md:text-4xl font-bold text-foreground">
+                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+                      Barbie
+                    </span>
+                    <span className="text-primary/40 text-3xl hidden sm:inline">•</span>
+                    <span className="flex items-center gap-3 text-2xl md:text-4xl font-bold text-foreground">
+                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+                      Woolworths
+                    </span>
+                    <span className="text-primary/40 text-3xl hidden sm:inline">•</span>
+                    <span className="flex items-center gap-3 text-2xl md:text-4xl font-bold text-foreground">
+                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+                      Amazon
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Credentials */}
+                <div className="border-t border-primary/20 pt-8">
+                  <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-xl md:text-2xl">
+                    <span className="text-gradient-gold font-bold">Award-Winning Cinematographer</span>
+                    <span className="text-primary/40 hidden sm:inline">|</span>
+                    <span className="text-gradient-gold font-bold">20+ Years Experience</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Award-Winning Cinematographer | 20+ Years Experience
-            </p>
           </div>
         </div>
       </div>
