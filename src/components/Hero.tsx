@@ -52,22 +52,25 @@ const Hero = () => {
               <div className="flex flex-col gap-8">
                 {/* Trusted By Brands */}
                 <div className="text-center">
-                  <p className="text-lg md:text-xl text-muted-foreground mb-6 uppercase tracking-wider">Trusted By</p>
-                  <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                    <span className="flex items-center gap-3 text-2xl md:text-4xl font-bold text-foreground">
-                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
-                      Barbie
-                    </span>
-                    <span className="text-primary/40 text-3xl hidden sm:inline">•</span>
-                    <span className="flex items-center gap-3 text-2xl md:text-4xl font-bold text-foreground">
-                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
-                      Woolworths
-                    </span>
-                    <span className="text-primary/40 text-3xl hidden sm:inline">•</span>
-                    <span className="flex items-center gap-3 text-2xl md:text-4xl font-bold text-foreground">
-                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
-                      Amazon
-                    </span>
+                  <p className="text-sm md:text-base text-primary/80 mb-8 uppercase tracking-[0.2em] font-medium">Trusted By</p>
+                  <div className="bg-amber-50/90 backdrop-blur-sm rounded-xl border border-primary/30 shadow-lg shadow-primary/10 px-8 py-6">
+                    <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+                      <img
+                        src="/Barbie_Logo.svg"
+                        alt="Barbie"
+                        className="h-8 md:h-12 object-contain hover:scale-105 transition-transform duration-300 cursor-default"
+                      />
+                      <img
+                        src="/Woolworths-Logo.png"
+                        alt="Woolworths"
+                        className="h-8 md:h-12 object-contain hover:scale-105 transition-transform duration-300 cursor-default"
+                      />
+                      <img
+                        src="/Amazon_logo.svg"
+                        alt="Amazon"
+                        className="h-8 md:h-12 object-contain hover:scale-105 transition-transform duration-300 cursor-default"
+                      />
+                    </div>
                   </div>
                 </div>
                 
