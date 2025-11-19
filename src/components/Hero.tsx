@@ -1,20 +1,95 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Menu, X } from "lucide-react";
+import { useState } from "react";
 import heroImage from "@/assets/hero-cinema.jpg";
 
 const Hero = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  const navItems = [
+    { label: 'Home', id: 'hero' },
+    { label: 'Services', id: 'services' },
+    { label: 'Process', id: 'process' },
+    { label: 'FAQ', id: 'faq' },
+    { label: 'Contact', id: 'contact' }
+  ];
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Navigation Header */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-secondary/20">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <img
-              src="/logo.png"
-              alt="Imagenus"
-              className="h-16 md:h-24 object-contain"
-            />
+            {/* Logo and Company Name */}
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo.png"
+                alt="Imagenus"
+                className="h-8 md:h-10 object-contain"
+              />
+              <span className="text-xl md:text-2xl font-bold text-foreground">Imagenus</span>
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-8">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-muted-foreground hover:text-secondary transition-colors duration-300 font-medium"
+                >
+                  {item.label}
+                </button>
+              ))}
+              <Button
+                variant="outline"
+                onClick={() => scrollToSection('contact')}
+                className="border-secondary/30 hover:border-secondary hover:bg-secondary/10"
+              >
+                Get Quote
+              </Button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden text-foreground hover:text-secondary transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 border-t border-secondary/20">
+              <div className="flex flex-col gap-4 mt-4">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-left text-muted-foreground hover:text-secondary transition-colors duration-300 font-medium py-2"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+                <Button
+                  variant="outline"
+                  onClick={() => scrollToSection('contact')}
+                  className="border-secondary/30 hover:border-secondary hover:bg-secondary/10 mt-2"
+                >
+                  Get Quote
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
       {/* Background Image with Overlay */}
@@ -48,11 +123,21 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-            <Button variant="hero" size="xl" className="group">
-              View Our Portfolio
+            <Button
+              variant="hero"
+              size="xl"
+              className="group"
+              onClick={() => scrollToSection('services')}
+            >
+              View Our Services
               <Play className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="xl" className="group">
+            <Button
+              variant="outline"
+              size="xl"
+              className="group"
+              onClick={() => scrollToSection('contact')}
+            >
               Discuss Your Project
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
