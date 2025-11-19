@@ -97,7 +97,7 @@ const Services = () => {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="glass-card border-2 hover:border-secondary/50 transition-all duration-300 group">
+            <Card key={index} className="glass-card border-2 hover:border-secondary/50 transition-all duration-300 group flex flex-col h-full">
               <CardHeader>
                 <div className="flex items-start justify-between mb-4">
                   <div className="inline-flex p-3 rounded-xl bg-secondary/10 group-hover:bg-secondary/20 transition-colors">
@@ -118,31 +118,35 @@ const Services = () => {
                   <p className="text-sm text-muted-foreground">Timeline: {service.timeline}</p>
                 )}
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div>
-                  <h4 className="font-semibold mb-3 text-foreground">What's Included:</h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <Check className="w-4 h-4 text-secondary mt-0.5 shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-3 text-foreground">Ideal For:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {service.ideal.map((item, idx) => (
-                      <Badge key={idx} variant="outline" className="text-xs">
-                        {item}
-                      </Badge>
-                    ))}
+              <CardContent className="flex-1 flex flex-col">
+                <div className="space-y-6 flex-1">
+                  <div>
+                    <h4 className="font-semibold mb-3 text-foreground">What's Included:</h4>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <Check className="w-4 h-4 text-secondary mt-0.5 shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-3 text-foreground">Ideal For:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {service.ideal.map((item, idx) => (
+                        <Badge key={idx} variant="outline" className="text-xs">
+                          {item}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
-                <Button className="w-full" variant="default" size="lg">
-                  Request Quote
-                </Button>
+                <div className="mt-6">
+                  <Button className="w-full" variant="default" size="lg">
+                    Request Quote
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
