@@ -5,6 +5,18 @@ import heroImage from "@/assets/hero-cinema.jpg";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Navigation Header */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-primary/10">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <img
+              src="/logo.png"
+              alt="Imagenus"
+              className="h-16 md:h-24 object-contain"
+            />
+          </div>
+        </div>
+      </nav>
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 z-0"

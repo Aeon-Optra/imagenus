@@ -131,11 +131,11 @@ const Contact = () => {
                   </div>
                 </a>
 
-                <a href="https://wa.me/27XXXXXXXXX" className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors group">
+                <a href="https://wa.me/27729781302" className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors group">
                   <Phone className="w-5 h-5 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
                     <p className="font-semibold text-foreground">WhatsApp</p>
-                    <p className="text-sm">+27 XX XXX XXXX</p>
+                    <p className="text-sm">+27 72 978 1302</p>
                   </div>
                 </a>
 
