@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Navigation Header */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-primary/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-secondary/20">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <img
@@ -102,8 +102,8 @@ const Hero = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center p-2">
-          <div className="w-1 h-3 bg-primary rounded-full animate-bounce" />
+        <div className="w-6 h-10 border-2 border-secondary/30 rounded-full flex justify-center p-2">
+          <div className="w-1 h-3 bg-secondary rounded-full animate-bounce" />
         </div>
       </div>
     </section>

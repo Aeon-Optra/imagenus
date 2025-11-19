@@ -50,9 +50,9 @@ const FAQ = () => {
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="glass-card px-6 rounded-xl border-2 hover:border-primary/50 transition-colors"
+              className="glass-card px-6 rounded-xl border-2 hover:border-secondary/50 transition-colors"
             >
-              <AccordionTrigger className="text-left font-semibold hover:text-primary">
+              <AccordionTrigger className="text-left font-semibold hover:text-secondary">
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed pt-2">

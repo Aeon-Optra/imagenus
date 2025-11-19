@@ -37,8 +37,8 @@ const ValueProposition = () => {
               key={index}
               className="glass-card p-8 rounded-2xl hover:scale-105 transition-transform duration-300 group"
             >
-              <div className="mb-6 inline-flex p-4 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <value.icon className="w-8 h-8 text-primary" />
+              <div className="mb-6 inline-flex p-4 rounded-xl bg-secondary/10 group-hover:bg-secondary/20 transition-colors">
+                <value.icon className="w-8 h-8 text-secondary" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-foreground">{value.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{value.description}</p>

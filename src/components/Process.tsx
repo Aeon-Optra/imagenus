@@ -55,7 +55,7 @@ const Process = () => {
           {steps.map((step, index) => (
             <div 
               key={index}
-              className="glass-card p-6 md:p-8 rounded-2xl hover:border-primary/50 transition-all duration-300 group"
+              className="glass-card p-6 md:p-8 rounded-2xl hover:border-secondary/50 transition-all duration-300 group"
             >
               <div className="flex flex-col md:flex-row gap-6 items-start">
                 <div className="flex-shrink-0">
@@ -66,7 +66,7 @@ const Process = () => {
                 <div className="flex-1">
                   <h3 className="text-xl md:text-2xl font-bold mb-3 text-foreground flex items-center gap-3">
                     {step.title}
-                    <CheckCircle2 className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <CheckCircle2 className="w-5 h-5 text-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">{step.description}</p>
                 </div>

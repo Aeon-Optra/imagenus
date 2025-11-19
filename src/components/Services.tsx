@@ -97,11 +97,11 @@ const Services = () => {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="glass-card border-2 hover:border-primary/50 transition-all duration-300 group">
+            <Card key={index} className="glass-card border-2 hover:border-secondary/50 transition-all duration-300 group">
               <CardHeader>
                 <div className="flex items-start justify-between mb-4">
-                  <div className="inline-flex p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <service.icon className="w-8 h-8 text-primary" />
+                  <div className="inline-flex p-3 rounded-xl bg-secondary/10 group-hover:bg-secondary/20 transition-colors">
+                    <service.icon className="w-8 h-8 text-secondary" />
                   </div>
                   <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/30">
                     {service.badge}
@@ -124,7 +124,7 @@ const Services = () => {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                        <Check className="w-4 h-4 text-secondary mt-0.5 shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
