@@ -1,0 +1,5 @@
+domains:
+  imagenus.co.za:
+    forms:
+      contact:
+        to: hello@imagenus.co.za
