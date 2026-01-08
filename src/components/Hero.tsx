@@ -108,7 +108,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 py-32">
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in-up">
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             <span className="text-gradient-gold">South Africa's</span>
             <br />
             <span className="text-foreground">AI-Enhanced Video</span>
@@ -117,15 +117,15 @@ const Hero = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Where award-winning cinematography meets cutting-edge AI innovation. We create premium video content that captivates audiences and drives results - from concept to delivery.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
             <Button
-              variant="hero"
-              size="xl"
+              variant="default"
+              size="lg"
               className="group"
               onClick={() => scrollToSection('services')}
             >
@@ -134,7 +134,7 @@ const Hero = () => {
             </Button>
             <Button
               variant="outline"
-              size="xl"
+              size="lg"
               className="group"
               onClick={() => scrollToSection('contact')}
             >
@@ -155,16 +155,16 @@ const Hero = () => {
                       <img
                         src="/Barbie_Logo.svg"
                         alt="Barbie"
-                        className="h-8 md:h-12 object-contain hover:scale-105 transition-transform duration-300 cursor-default"
+                        className="h-8 relative bottom-1 md:h-12 object-contain hover:scale-105 transition-transform duration-300 cursor-default"
                       />
+                        <img
+                          src="/Amazon_logo.svg"
+                          alt="Amazon"
+                          className="h-8 top-2 relative md:h-12 object-contain hover:scale-105 transition-transform duration-300 cursor-default"
+                        />
                       <img
                         src="/Woolworths-Logo.png"
                         alt="Woolworths"
-                        className="h-8 md:h-12 object-contain hover:scale-105 transition-transform duration-300 cursor-default"
-                      />
-                      <img
-                        src="/Amazon_logo.svg"
-                        alt="Amazon"
                         className="h-8 md:h-12 object-contain hover:scale-105 transition-transform duration-300 cursor-default"
                       />
                     </div>
