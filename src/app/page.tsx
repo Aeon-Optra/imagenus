@@ -5,7 +5,7 @@ import Process from "@/components/Process";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 
-const Index = () => {
+export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Hero />
@@ -16,6 +16,4 @@ const Index = () => {
       <Contact />
     </div>
   );
-};
-
-export default Index;
+}

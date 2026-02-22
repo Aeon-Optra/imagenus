@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
@@ -46,7 +46,7 @@ All colors MUST be HSL.
     /* Custom Design Tokens */
     --hero-gradient-start: 220 20% 8%;
     --hero-gradient-end: 220 25% 12%;
-    
+
     --gold-glow: 42 78% 58%;
     --gold-light: 42 85% 65%;
     --gold-dark: 42 70% 45%;

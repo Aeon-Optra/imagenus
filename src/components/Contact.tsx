@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,7 +9,7 @@ import { Mail, Phone, MapPin, CheckCircle, AlertCircle, Loader2 } from "lucide-r
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -39,13 +41,24 @@ const Contact = () => {
     resolver: zodResolver(formSchema),
   });
 
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const customEvent = e as CustomEvent<{ projectType: string }>;
+      if (customEvent.detail?.projectType) {
+        setValue("projectType", customEvent.detail.projectType);
+      }
+    };
+    window.addEventListener("request-quote", handler);
+    return () => window.removeEventListener("request-quote", handler);
+  }, [setValue]);
+
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     setErrorMessage('');
 
     try {
-      const response = await fetch('https://api.mailiam.dev/v1/imagenus.co.za/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -252,7 +265,7 @@ const Contact = () => {
           <div className="space-y-6">
             <div className="glass-card p-6 rounded-xl space-y-6">
               <h3 className="text-xl font-bold">Alternative Contact Methods</h3>
-              
+
               <div className="space-y-4">
                 <a href="mailto:hello@imagenus.co.za" className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors group">
                   <Mail className="w-5 h-5 mt-0.5 group-hover:scale-110 transition-transform" />

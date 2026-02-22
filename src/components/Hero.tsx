@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -96,7 +98,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${heroImage})`,
+          backgroundImage: `url(${heroImage.src})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

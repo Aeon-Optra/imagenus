@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -19,7 +21,8 @@ const Services = () => {
       ],
       ideal: ["Social media ads", "A/B testing", "Seasonal campaigns"],
       badge: "Fast Turnaround",
-      serviceType: "oneoff"
+      serviceType: "oneoff",
+      contactProjectType: "ai-ads",
     },
     {
       icon: Film,
@@ -47,6 +50,7 @@ const Services = () => {
       ideal: ["Brand launches", "Corporate films", "Investor presentations"],
       badge: "Premium Quality",
       serviceType: "oneoff",
+      contactProjectType: "brand-film",
       timeline: "6-12 weeks"
     },
     {
@@ -65,6 +69,7 @@ const Services = () => {
       ideal: ["Established brands", "E-commerce", "Content agencies"],
       badge: "Best Value",
       serviceType: "retainer",
+      contactProjectType: "partnership",
       commitment: "12-month minimum"
     },
     {
@@ -85,6 +90,7 @@ const Services = () => {
       ideal: ["Enterprise brands", "Diverse content needs", "Volume + premium"],
       badge: "Complete Solution",
       serviceType: "retainer",
+      contactProjectType: "partnership",
       commitment: "12-month minimum"
     },
     {
@@ -104,9 +110,19 @@ const Services = () => {
       ideal: ["Unique requirements", "Multiple video types", "Custom timelines"],
       badge: "Fully Customizable",
       serviceType: "custom",
+      contactProjectType: "not-sure",
       isCustom: true
     }
   ];
+
+  const handleRequestQuote = (projectType: string) => {
+    window.dispatchEvent(
+      new CustomEvent("request-quote", { detail: { projectType } })
+    );
+    document
+      .getElementById("contact")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section id="services" className="py-24 px-6">
@@ -246,7 +262,12 @@ const Services = () => {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <Button className="w-full" variant="default" size="lg">
+                  <Button
+                    className="w-full"
+                    variant="default"
+                    size="lg"
+                    onClick={() => handleRequestQuote(service.contactProjectType)}
+                  >
                     {service.isCustom ? "Get Custom Quote" : "Request Quote"}
                   </Button>
                 </div>
