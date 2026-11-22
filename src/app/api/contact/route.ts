@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 function escapeHtml(str: string): string {
   return str
     .replace(/&/g, "&amp;")
@@ -102,13 +100,16 @@ export async function POST(request: Request) {
       </table>
     `;
 
-    await resend.emails.send({
-      from: "Imagenus Website <onboarding@resend.dev>",
-      to: "hello@imagenus.co.za",
+    // Lazy init: Resend throws on a missing key, which breaks `next build` if done at module load.
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const { error } = await resend.emails.send({
+      from: process.env.CONTACT_FROM || "Imagenus Website <onboarding@resend.dev>",
+      to: (process.env.CONTACT_TO || "hello@imagenus.co.za").split(","),
       replyTo: email,
       subject,
       html: htmlBody,
     });
+    if (error) throw new Error(`Resend: ${error.name} ${error.message}`);
 
     return NextResponse.json({ success: true });
   } catch (error) {
